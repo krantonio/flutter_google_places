@@ -269,6 +269,7 @@ class _AppBarPlacesAutoCompleteTextFieldState
     assert(state != null);
 
     return Container(
+      color: Colors.red,
         alignment: Alignment.topLeft,
         margin: EdgeInsets.only(top: 4.0),
         child: TextField(
