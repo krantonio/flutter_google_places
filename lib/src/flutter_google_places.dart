@@ -349,14 +349,22 @@ class PredictionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(Icons.location_on),
-      title: Text(prediction.description),
-      onTap: () {
-        if (onTap != null) {
-          onTap(prediction);
-        }
-      },
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey,
+        border: Border(
+          bottom: BorderSide(width: 16, color: Colors.lightBlue.shade600),
+        )
+      ),
+      child: ListTile(
+        leading: Icon(Icons.location_on),
+        title: Text(prediction.description),
+        onTap: () {
+          if (onTap != null) {
+            onTap(prediction);
+          }
+        },
+      ),
     );
   }
 }
