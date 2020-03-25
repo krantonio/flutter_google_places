@@ -77,7 +77,9 @@ class PlacesAutocompleteWidget extends StatefulWidget {
 class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
   @override
   Widget build(BuildContext context) {
-    final appBar = AppBar(title: AppBarPlacesAutoCompleteTextField());
+    final appBar = AppBar(title: AppBarPlacesAutoCompleteTextField(),
+      backgroundColor: Colors.red,
+    );
     final body = PlacesAutocompleteResult(
       onTap: Navigator.of(context).pop,
       logo: widget.logo,
@@ -269,7 +271,9 @@ class _AppBarPlacesAutoCompleteTextFieldState
     assert(state != null);
 
     return Container(
-      color: Colors.red,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(5))),
         alignment: Alignment.topLeft,
         margin: EdgeInsets.only(top: 4.0),
         child: TextField(
@@ -329,6 +333,7 @@ class PredictionsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+
       children: predictions
           .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
           .toList(),
