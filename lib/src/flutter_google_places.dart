@@ -351,13 +351,13 @@ class PredictionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey,
+        color: Color.fromRGBO(243, 243, 243, 1),
         border: Border(
-          bottom: BorderSide(width: 16, color: Colors.lightBlue.shade600),
+          bottom: BorderSide(width: 1, color: Color.fromRGBO(112, 112, 112, 1)),
         )
       ),
       child: ListTile(
-        leading: Icon(Icons.location_on),
+        leading: SizedBox(width: 25,),
         title: Text(prediction.description),
         onTap: () {
           if (onTap != null) {
