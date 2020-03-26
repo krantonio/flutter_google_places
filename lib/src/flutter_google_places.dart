@@ -119,27 +119,28 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                     ),
                     Container(
                       //padding: EdgeInsets.all(15),
+                      color: Colors.blueAccent,
                       padding: EdgeInsets.only(bottom: 18, left: 20, right: 20),
-                      child: Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            AppBarPlacesAutoCompleteTextField(),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Text(
-                                'Cancel',
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    color: widget.navBgColor == null? Colors.black : Colors.white
-                                ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Expanded(
+                            child: AppBarPlacesAutoCompleteTextField()
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'Cancel',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: widget.navBgColor == null? Colors.black : Colors.white
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     )
                   ]
