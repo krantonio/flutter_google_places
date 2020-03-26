@@ -97,33 +97,39 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                 padding: EdgeInsets.only(top: 20),
                 //color: Color.fromRGBO(244 88, 27, 2),
                 color: const Color.fromRGBO(244, 88, 27, 1),
-                child: Column(children: <Widget>[
-                  SafeArea(
-                    top: true,
-                    child: Container(
-                      padding: EdgeInsets.only(bottom: 20),
-                      child: Image.asset(
-                        'packages/flutter_google_places/assets/bike-logo-white.png',
-                        height: 70,
+                child: Column(
+                  children: <Widget>[
+                    SafeArea(
+                      top: true,
+                      child: Container(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: Image.asset(
+                          'packages/flutter_google_places/assets/bike-logo-white.png',
+                          height: 70,
+                        ),
                       ),
                     ),
-                  ),
-
-                ]),
-              ),
-              AppBarPlacesAutoCompleteTextField(),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  'Cancel',
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white
-                  ),
+                    Row(
+                      children: <Widget>[
+                        AppBarPlacesAutoCompleteTextField(),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text(
+                            'Cancel',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ]
                 ),
               ),
+
               Expanded(
                 child: PlacesAutocompleteResult(
                   onTap: Navigator.of(context).pop,
