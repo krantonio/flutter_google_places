@@ -437,6 +437,7 @@ class PredictionsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: EdgeInsets.all(0.0),
       shrinkWrap: true,
       children: predictions
           .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
