@@ -95,7 +95,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
     final body = Stack(
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(top: 10, bottom: 500),
+          padding: EdgeInsets.only(top: 10,),
           color: Colors.red,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
