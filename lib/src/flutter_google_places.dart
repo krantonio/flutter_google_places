@@ -109,26 +109,29 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                         ),
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Expanded(
-                          child: AppBarPlacesAutoCompleteTextField()
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text(
-                            'Cancel',
-                            style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.white
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Expanded(
+                            child: AppBarPlacesAutoCompleteTextField()
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'Cancel',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )
                   ]
                 ),
