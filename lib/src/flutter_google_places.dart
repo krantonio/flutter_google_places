@@ -149,7 +149,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                   ]
                 ),
               ),
-              Expanded(
+              Container(
                 child: PlacesAutocompleteResult(
                   onTap: Navigator.of(context).pop,
                   logo: widget.logo,
