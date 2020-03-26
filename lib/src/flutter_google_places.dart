@@ -151,19 +151,11 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                   ]
                 ),
               ),
-              Column(
-                children: <Widget>[
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      padding: EdgeInsets.all(1),
-                      child: PlacesAutocompleteResult(
-                        onTap: Navigator.of(context).pop,
-                        logo: widget.logo,
-                      ),
-                    ),
-                  ),
-                ],
+              Expanded(
+                child: PlacesAutocompleteResult(
+                  onTap: Navigator.of(context).pop,
+                  logo: widget.logo,
+                ),
               )
             ],
           ),
