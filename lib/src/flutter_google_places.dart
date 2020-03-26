@@ -126,8 +126,8 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Container(
-                            padding: EdgeInsets.only(right: 20),
-                            child: AppBarPlacesAutoCompleteTextField()
+                            padding: EdgeInsets.only(right: 5),
+                            child: Container()
                           ),
                           GestureDetector(
                             onTap: () {
