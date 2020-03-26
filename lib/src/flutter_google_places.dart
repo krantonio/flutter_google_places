@@ -81,28 +81,28 @@ class PlacesAutocompleteWidget extends StatefulWidget {
 class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
   @override
   Widget build(BuildContext context) {
-    final appBar = AppBar(
-      title: AppBarPlacesAutoCompleteTextField(),
-      leading: Container(),
-      actions: <Widget>[
-
-      ]
-      ,
-      backgroundColor: Color.fromRGBO(244, 88, 27, 1),
-    );
+//    final appBar = AppBar(
+//      title: AppBarPlacesAutoCompleteTextField(),
+//      leading: Container(),
+//      actions: <Widget>[
+//
+//      ]
+//      ,
+//      backgroundColor: Color.fromRGBO(244, 88, 27, 1),
+//    );
     final body = Stack(
       children: <Widget>[
         Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Container(
                 padding: EdgeInsets.only(top: 10),
                 color: widget.navBgColor == null ? Colors.white : widget.navBgColor,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+//                  mainAxisAlignment: MainAxisAlignment.start,
+//                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     SafeArea(
                       top: true,
