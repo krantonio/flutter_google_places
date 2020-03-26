@@ -84,7 +84,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
       onTap: Navigator.of(context).pop,
       logo: widget.logo,
     );
-    return Scaffold(appBar: appBar, body: body);
+    return Scaffold(appBar: PreferredSize(child: appBar, preferredSize: Size.fromHeight(100.0)), body: body);
   }
 }
 
