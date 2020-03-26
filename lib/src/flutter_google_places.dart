@@ -271,7 +271,9 @@ class _AppBarPlacesAutoCompleteTextFieldState
     assert(state != null);
 
     return Container(
+      padding: EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
+          border: Border.all(width: 1, color: Color.fromRGBO(112, 112, 112, 1)),
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(5))),
         alignment: Alignment.topLeft,
