@@ -108,7 +108,6 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                       top: true,
                       child: Container(
                         color: Colors.red,
-                        padding: EdgeInsets.only(bottom: 10),
                         child: Image.asset(
                           widget.imageLogoPath == null ?
                           'packages/flutter_google_places/assets/google_black.png'
@@ -346,7 +345,8 @@ class _AppBarPlacesAutoCompleteTextFieldState
     assert(state != null);
 
     return Container(
-      padding: EdgeInsets.only(bottom: 20),
+      height: 32,
+      width: 313,
       decoration: BoxDecoration(
           border: Border.all(width: 1, color: Color.fromRGBO(112, 112, 112, 1)),
           color: Colors.white,
