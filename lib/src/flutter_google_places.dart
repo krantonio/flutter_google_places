@@ -77,14 +77,36 @@ class PlacesAutocompleteWidget extends StatefulWidget {
 class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
   @override
   Widget build(BuildContext context) {
-    final appBar = AppBar(title: AppBarPlacesAutoCompleteTextField(),
-      backgroundColor: Colors.red,
+    final appBar = AppBar(
+      title: AppBarPlacesAutoCompleteTextField(),
+      leading: Container(),
+      actions: <Widget>[
+        GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Text(
+            'Cancel',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.white
+            ),
+          ),
+        )
+      ]
+      ,
+      backgroundColor: Color.fromRGBO(244, 88, 27, 1),
     );
     final body = PlacesAutocompleteResult(
       onTap: Navigator.of(context).pop,
       logo: widget.logo,
     );
-    return Scaffold(appBar: PreferredSize(child: appBar, preferredSize: Size.fromHeight(100.0)), body: body);
+    return Scaffold(
+        appBar: PreferredSize(
+            child: appBar,
+            preferredSize: Size.fromHeight(100.0)
+        ),
+        body: body);
   }
 }
 
