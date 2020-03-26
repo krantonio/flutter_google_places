@@ -92,76 +92,86 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
 //      ,
 //      backgroundColor: Color.fromRGBO(244, 88, 27, 1),
 //    );
-    final body = Container(
-      padding: EdgeInsets.only(top: 10,bottom: 250),
-      color: Colors.red,
-      child: Column(
+    final body = Stack(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.only(top: 10, bottom: 250),
+          color: Colors.red,
+          child: Column(
 
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
 //            mai,nAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Container(
-            color: widget.navBgColor == null ? Colors.white : widget.navBgColor,
-            child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                SafeArea(
-                  top: true,
-                  bottom: false,
-                  child: Container(
-                    child: Image.asset(
-                      widget.imageLogoPath == null ?
-                      'packages/flutter_google_places/assets/google_black.png'
-                      : widget.imageLogoPath,
-                      height: 52,
-                      width: 74,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 10,),
-                Container(
-                  //padding: EdgeInsets.all(15),
-                  padding: EdgeInsets.only(bottom: 18, left: 20, right: 20),
-                  child: Row(
+            children: <Widget>[
+              Container(
+                color: widget.navBgColor == null ? Colors.white : widget
+                    .navBgColor,
+                child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(right: 5),
-                        child: AppBarPlacesAutoCompleteTextField()
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Text(
-                          'Cancel',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: widget.navBgColor == null? Colors.black : Colors.white
+                      SafeArea(
+                        top: true,
+                        bottom: false,
+                        child: Container(
+                          child: Image.asset(
+                            widget.imageLogoPath == null ?
+                            'packages/flutter_google_places/assets/google_black.png'
+                                : widget.imageLogoPath,
+                            height: 52,
+                            width: 74,
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                )
-              ]
-            ),
-          ),
-          Flexible(
-            child: Container(
-              padding: EdgeInsets.all(5),
-              color: Colors.blue,
-              child: PlacesAutocompleteResult(
-                onTap: Navigator.of(context).pop,
-                logo: widget.logo,
+                      SizedBox(height: 10,),
+                      Container(
+                        //padding: EdgeInsets.all(15),
+                        padding: EdgeInsets.only(
+                            bottom: 18, left: 20, right: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                                padding: EdgeInsets.only(right: 5),
+                                child: AppBarPlacesAutoCompleteTextField()
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text(
+                                'Cancel',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: widget.navBgColor == null ? Colors
+                                        .black : Colors.white
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ]
+                ),
               ),
-            ),
-          )
-        ],
-      ),
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  color: Colors.blue,
+                  child: PlacesAutocompleteResult(
+                    onTap: Navigator
+                        .of(context)
+                        .pop,
+                    logo: widget.logo,
+                  ),
+                ),
+              )
+            ],
+          ),
+        )
+
+      ],
     );
     return Scaffold(
 
