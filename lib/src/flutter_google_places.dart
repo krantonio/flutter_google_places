@@ -156,6 +156,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                 ),
               ),
               Flexible(
+                fit: FlexFit.tight ,
                 child: Container(
                   padding: EdgeInsets.all(5),
                   color: Colors.blue,
