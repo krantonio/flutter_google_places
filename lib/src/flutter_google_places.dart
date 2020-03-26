@@ -107,6 +107,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                     SafeArea(
                       top: true,
                       child: Container(
+                        color: Colors.red,
                         padding: EdgeInsets.only(bottom: 10),
                         child: Image.asset(
                           widget.imageLogoPath == null ?
