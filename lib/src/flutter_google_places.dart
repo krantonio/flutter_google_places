@@ -108,9 +108,10 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                         padding: EdgeInsets.only(bottom: 15),
                         child: Image.asset(
                           widget.imageLogoPath == null ?
-                          'packages/flutter_google_places/assets/google_black.png";'
+                          'packages/flutter_google_places/assets/google_black.png'
                           : widget.imageLogoPath,
                           height: 52,
+                          width: 74,
                         ),
                       ),
                     ),
@@ -120,9 +121,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Expanded(
-                            child: AppBarPlacesAutoCompleteTextField()
-                          ),
+                          AppBarPlacesAutoCompleteTextField(),
                           GestureDetector(
                             onTap: () {
                               Navigator.pop(context);
