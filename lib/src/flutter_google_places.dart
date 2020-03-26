@@ -125,7 +125,8 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Expanded(
+                          Container(
+                            padding: EdgeInsets.only(right: 20),
                             child: AppBarPlacesAutoCompleteTextField()
                           ),
                           GestureDetector(
@@ -351,7 +352,7 @@ class _AppBarPlacesAutoCompleteTextFieldState
           border: Border.all(width: 1, color: Color.fromRGBO(112, 112, 112, 1)),
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(5))),
-        alignment: Alignment.topLeft,
+        alignment: Alignment.centerLeft,
         margin: EdgeInsets.only(top: 4.0),
         child: TextField(
           controller: state._queryTextController,
