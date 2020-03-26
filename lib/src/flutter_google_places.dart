@@ -81,18 +81,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
       title: AppBarPlacesAutoCompleteTextField(),
       leading: Container(),
       actions: <Widget>[
-        GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Text(
-            'Cancel',
-            style: TextStyle(
-              fontSize: 12,
-              color: Colors.white
-            ),
-          ),
-        )
+
       ]
       ,
       backgroundColor: Color.fromRGBO(244, 88, 27, 1),
@@ -101,20 +90,39 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
       children: <Widget>[
         Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(
                 padding: EdgeInsets.only(top: 20),
                 //color: Color.fromRGBO(244 88, 27, 2),
                 color: const Color.fromRGBO(244, 88, 27, 1),
                 child: Column(children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(bottom: 20),
-                    child: Image.asset(
-                      'packages/flutter_google_places/assets/bike-logo-white.png',
-                      height: 70,
+                  SafeArea(
+                    top: true,
+                    child: Container(
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Image.asset(
+                        'packages/flutter_google_places/assets/bike-logo-white.png',
+                        height: 70,
+                      ),
                     ),
                   ),
+
                 ]),
+              ),
+              AppBarPlacesAutoCompleteTextField(),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  'Cancel',
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white
+                  ),
+                ),
               ),
               Expanded(
                 child: PlacesAutocompleteResult(
