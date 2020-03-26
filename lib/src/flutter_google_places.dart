@@ -83,24 +83,13 @@ class PlacesAutocompleteWidget extends StatefulWidget {
 class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
   @override
   Widget build(BuildContext context) {
-//    final appBar = AppBar(
-//      title: AppBarPlacesAutoCompleteTextField(),
-//      leading: Container(),
-//      actions: <Widget>[
-//
-//      ]
-//      ,
-//      backgroundColor: Color.fromRGBO(244, 88, 27, 1),
-//    );
+
     final body = Stack(
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(top: 10,),
-          color: Colors.red,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-//            mai,nAxisSize: MainAxisSize.min,
             children: <Widget>[
               Container(
                 color: widget.navBgColor == null ? Colors.white : widget
@@ -124,7 +113,6 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                       ),
                       SizedBox(height: 10,),
                       Container(
-                        //padding: EdgeInsets.all(15),
                         padding: EdgeInsets.only(
                             bottom: 18, left: 20, right: 20),
                         child: Row(
@@ -154,7 +142,6 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                     ]
                 ),
               ),
-              Text('hello'),
               Expanded(
                 child:PlacesAutocompleteResult(
                   onTap: Navigator
@@ -462,7 +449,6 @@ class PredictionTile extends StatelessWidget {
         )
       ),
       child: ListTile(
-        //leading: SizedBox(width: 25,),e
         title: Container(
           padding: EdgeInsets.only(left: 15),
           child: Text(prediction.description,
