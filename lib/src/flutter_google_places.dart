@@ -108,8 +108,6 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                       top: true,
                       bottom: false,
                       child: Container(
-                        padding: EdgeInsets.only(bottom: 10),
-                        color: Colors.red,
                         child: Image.asset(
                           widget.imageLogoPath == null ?
                           'packages/flutter_google_places/assets/google_black.png'
@@ -119,9 +117,9 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                         ),
                       ),
                     ),
+                    SizedBox(height: 10,),
                     Container(
                       //padding: EdgeInsets.all(15),
-                      color: Colors.blueAccent,
                       padding: EdgeInsets.only(bottom: 18, left: 20, right: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -129,7 +127,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                         children: <Widget>[
                           Container(
                             padding: EdgeInsets.only(right: 5),
-                            child: Container()
+                            child: AppBarPlacesAutoCompleteTextField()
                           ),
                           GestureDetector(
                             onTap: () {
@@ -356,29 +354,37 @@ class _AppBarPlacesAutoCompleteTextFieldState
           borderRadius: BorderRadius.all(Radius.circular(5))),
         alignment: Alignment.centerLeft,
         margin: EdgeInsets.only(top: 4.0),
-        child: TextField(
-          controller: state._queryTextController,
-          autofocus: true,
-          style: TextStyle(
-            color: Theme.of(context).brightness == Brightness.light
-                ? Colors.black.withOpacity(0.9)
-                : Colors.white.withOpacity(0.9),
-            fontSize: 16.0,
-          ),
-          decoration: InputDecoration(
-            hintText: state.widget.hint,
-            filled: true,
-            fillColor: Theme.of(context).brightness == Brightness.light
-                ? Colors.white30
-                : Colors.black38,
-            hintStyle: TextStyle(
-              color: Theme.of(context).brightness == Brightness.light
-                  ? Colors.black38
-                  : Colors.white30,
-              fontSize: 16.0,
-            ),
-            border: InputBorder.none,
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Icon(Icons.location_on),
+            SizedBox(width: 8,),
+            TextField(
+              controller: state._queryTextController,
+              autofocus: true,
+              style: TextStyle(
+                color: Theme.of(context).brightness == Brightness.light
+                    ? Colors.black.withOpacity(0.9)
+                    : Colors.white.withOpacity(0.9),
+                fontSize: 16.0,
+              ),
+              decoration: InputDecoration(
+                hintText: state.widget.hint,
+                filled: true,
+                fillColor: Theme.of(context).brightness == Brightness.light
+                    ? Colors.white30
+                    : Colors.black38,
+                hintStyle: TextStyle(
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? Colors.black38
+                      : Colors.white30,
+                  fontSize: 16.0,
+                ),
+                border: InputBorder.none,
+              ),
+            )
+          ],
         )
     );
   }
