@@ -347,6 +347,7 @@ class _AppBarPlacesAutoCompleteTextFieldState
 
     return Container(
       height: 32,
+      width: 280,
       decoration: BoxDecoration(
           border: Border.all(width: 1, color: Color.fromRGBO(112, 112, 112, 1)),
           color: Colors.white,
