@@ -442,11 +442,14 @@ class PredictionsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      shrinkWrap: true,
-      children: predictions
-          .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
-          .toList(),
+    return Container(
+      height: 200,
+      child: ListView(
+        shrinkWrap: true,
+        children: predictions
+            .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
+            .toList(),
+      ),
     );
   }
 }
