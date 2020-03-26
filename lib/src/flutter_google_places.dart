@@ -97,15 +97,37 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
       ,
       backgroundColor: Color.fromRGBO(244, 88, 27, 1),
     );
-    final body = PlacesAutocompleteResult(
-      onTap: Navigator.of(context).pop,
-      logo: widget.logo,
+    final body = Stack(
+      children: <Widget>[
+        Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.only(top: 20),
+                //color: Color.fromRGBO(244 88, 27, 2),
+                color: const Color.fromRGBO(244, 88, 27, 1),
+                child: Column(children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: Image.asset(
+                      'packages/flutter_google_places/assets/bike-logo-white.png',
+                      height: 70,
+                    ),
+                  ),
+                ]),
+              ),
+              Expanded(
+                child: PlacesAutocompleteResult(
+                  onTap: Navigator.of(context).pop,
+                  logo: widget.logo,
+                ),
+              )
+            ],
+          ),
+        )
+      ],
     );
     return Scaffold(
-        appBar: PreferredSize(
-            child: appBar,
-            preferredSize: Size.fromHeight(100.0)
-        ),
         body: body);
   }
 }
