@@ -154,6 +154,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                     ]
                 ),
               ),
+              Text('hello'),
               Expanded(
                 child:PlacesAutocompleteResult(
                   onTap: Navigator
