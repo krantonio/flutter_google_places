@@ -565,7 +565,9 @@ class PlacesAutocomplete {
       ValueChanged<PlacesAutocompleteResponse> onError,
       String proxyBaseUrl,
       Client httpClient,
-      String startText=""}) {
+      String startText="",
+      String imagePathLogo,
+      Color navBarColor}) {
     final builder = (BuildContext ctx) => PlacesAutocompleteWidget(
         apiKey: apiKey,
         mode: mode,
@@ -584,7 +586,9 @@ class PlacesAutocomplete {
         onError: onError,
         proxyBaseUrl: proxyBaseUrl,
         httpClient: httpClient,
-        startText: startText,);
+        startText: startText,
+        imageLogoPath: imagePathLogo,
+        navBgColor: navBarColor,);
 
     if (mode == Mode.overlay) {
       return showDialog(context: context, builder: builder);
