@@ -23,4 +23,3 @@ flutter:
   assets:
     - packages/flutter_google_places/assets/google_black.png
     - packages/flutter_google_places/assets/google_white.png
-    - packages/flutter_google_places/assets/bike-logo-white.png
