@@ -92,6 +92,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
 //      ,
 //      backgroundColor: Color.fromRGBO(244, 88, 27, 1),
 //    );
+
     final body = Container(
       padding: EdgeInsets.only(top: 10,bottom: 250),
       color: Colors.red,
@@ -150,21 +151,25 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
               ]
             ),
           ),
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.all(5),
-              color: Colors.blue,
-              child: PlacesAutocompleteResult(
-                onTap: Navigator.of(context).pop,
-                logo: widget.logo,
-              ),
-            ),
-          )
+//          Expanded(
+//            child: Container(
+//              padding: EdgeInsets.all(5),
+//              color: Colors.blue,
+//              child: PlacesAutocompleteResult(
+//                onTap: Navigator.of(context).pop,
+//                logo: widget.logo,
+//              ),
+//            ),
+//          )
         ],
       ),
     );
     return Scaffold(
-        body: body);
+        appBar: AppBar(title: body,),
+        body: PlacesAutocompleteResult(
+                onTap: Navigator.of(context).pop,
+                logo: widget.logo,
+              ),);
   }
 }
 
