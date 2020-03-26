@@ -151,12 +151,11 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
             ),
           ),
           Container(
+            padding: EdgeInsets.all(5),
             color: Colors.blue,
-            child: Expanded(
-              child: PlacesAutocompleteResult(
-                onTap: Navigator.of(context).pop,
-                logo: widget.logo,
-              ),
+            child: PlacesAutocompleteResult(
+              onTap: Navigator.of(context).pop,
+              logo: widget.logo,
             ),
           )
         ],
