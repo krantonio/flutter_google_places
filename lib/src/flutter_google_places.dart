@@ -95,6 +95,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
     final body = Stack(
       children: <Widget>[
         Container(
+          color: Colors.red,
           child: Column(
 //            mainAxisAlignment: MainAxisAlignment.start,
 //            crossAxisAlignment: CrossAxisAlignment.start,
@@ -150,11 +151,13 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                   ]
                 ),
               ),
-              Expanded(
-                child: PlacesAutocompleteResult(
-                  onTap: Navigator.of(context).pop,
-                  logo: widget.logo,
-                ),
+              Column(
+                children: <Widget>[
+                  PlacesAutocompleteResult(
+                    onTap: Navigator.of(context).pop,
+                    logo: widget.logo,
+                  ),
+                ],
               )
             ],
           ),
