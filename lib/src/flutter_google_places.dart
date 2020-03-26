@@ -94,7 +94,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
       children: <Widget>[
         Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(
@@ -119,6 +119,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                     ),
                     Container(
                       //padding: EdgeInsets.all(15),
+                      padding: EdgeInsets.only(bottom: 18, left: 20, right: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
