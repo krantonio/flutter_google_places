@@ -383,8 +383,8 @@ class _AppBarPlacesAutoCompleteTextFieldState
                   hintText: state.widget.hint,
                   filled: true,
                   fillColor: Theme.of(context).brightness == Brightness.light
-                      ? Color.fromRGBO(244, 88, 27, 0.9)
-                      : Color.fromRGBO(244, 88, 27, 0.9),
+                      ? Colors.white
+                      : Colors.white,
                   hintStyle: TextStyle(
                     color: Theme.of(context).brightness == Brightness.light
                         ? Color.fromRGBO(244, 88, 27, 0.9)
