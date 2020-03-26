@@ -101,6 +101,8 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                 padding: EdgeInsets.only(top: 10),
                 color: widget.navBgColor == null ? Colors.white : widget.navBgColor,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     SafeArea(
                       top: true,
