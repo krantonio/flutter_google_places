@@ -227,7 +227,7 @@ class _PlacesAutocompleteOverlayState extends PlacesAutocompleteState {
         _response.predictions.isEmpty) {
       body = Material(
         color: theme.dialogBackgroundColor,
-        child: widget.logo ?? PoweredByGoogleImage(),
+        //child: widget.logo ?? PoweredByGoogleImage(),
         borderRadius: BorderRadius.only(
           bottomLeft: bodyBottomLeftBorderRadius,
           bottomRight: bodyBottomRightBorderRadius,
