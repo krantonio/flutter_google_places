@@ -96,9 +96,9 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
       children: <Widget>[
         Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
+//            mainAxisAlignment: MainAxisAlignment.start,
+//            crossAxisAlignment: CrossAxisAlignment.start,
+//            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Container(
                 padding: EdgeInsets.only(top: 10),
@@ -150,8 +150,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                   ]
                 ),
               ),
-              SizedBox(
-                height: 50,
+              Expanded(
                 child: PlacesAutocompleteResult(
                   onTap: Navigator.of(context).pop,
                   logo: widget.logo,
@@ -259,7 +258,7 @@ class _PlacesAutocompleteOverlayState extends PlacesAutocompleteState {
         margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
         child: Stack(children: <Widget>[
           header,
-          Padding(padding: EdgeInsets.only(top: 48.0), child: body),
+          Padding(padding: EdgeInsets.only(top: 0), child: body),
         ]));
 
     if (Theme.of(context).platform == TargetPlatform.iOS) {
