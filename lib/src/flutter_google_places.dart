@@ -98,7 +98,6 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
           padding: EdgeInsets.only(top: 10, bottom: 500),
           color: Colors.red,
           child: Column(
-
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
 //            mai,nAxisSize: MainAxisSize.min,
@@ -155,23 +154,17 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                     ]
                 ),
               ),
-              Flexible(
-                fit: FlexFit.tight ,
-                child: Container(
-                  padding: EdgeInsets.all(5),
-                  color: Colors.blue,
-                  child: PlacesAutocompleteResult(
-                    onTap: Navigator
-                        .of(context)
-                        .pop,
-                    logo: widget.logo,
-                  ),
+              Expanded(
+                child:PlacesAutocompleteResult(
+                  onTap: Navigator
+                      .of(context)
+                      .pop,
+                  logo: widget.logo,
                 ),
               )
             ],
           ),
         )
-
       ],
     );
     return Scaffold(
