@@ -93,14 +93,15 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
 //      backgroundColor: Color.fromRGBO(244, 88, 27, 1),
 //    );
     final body = Container(
+      padding: EdgeInsets.only(top: 10,bottom: 250),
       color: Colors.red,
       child: Column(
+
 //            mainAxisAlignment: MainAxisAlignment.start,
 //            crossAxisAlignment: CrossAxisAlignment.start,
 //            mai,nAxisSize: MainAxisSize.min,
         children: <Widget>[
           Container(
-            padding: EdgeInsets.only(top: 10,bottom: 250),
             color: widget.navBgColor == null ? Colors.white : widget.navBgColor,
             child: Column(
 //                  mainAxisAlignment: MainAxisAlignment.start,
@@ -149,10 +150,13 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
               ]
             ),
           ),
-          Expanded(
-            child: PlacesAutocompleteResult(
-              onTap: Navigator.of(context).pop,
-              logo: widget.logo,
+          Container(
+            color: Colors.blue,
+            child: Expanded(
+              child: PlacesAutocompleteResult(
+                onTap: Navigator.of(context).pop,
+                logo: widget.logo,
+              ),
             ),
           )
         ],
