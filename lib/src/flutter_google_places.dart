@@ -92,21 +92,20 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
 //      ,
 //      backgroundColor: Color.fromRGBO(244, 88, 27, 1),
 //    );
-
     final body = Container(
       padding: EdgeInsets.only(top: 10,bottom: 250),
       color: Colors.red,
       child: Column(
 
-//            mainAxisAlignment: MainAxisAlignment.start,
-//            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
 //            mai,nAxisSize: MainAxisSize.min,
         children: <Widget>[
           Container(
             color: widget.navBgColor == null ? Colors.white : widget.navBgColor,
             child: Column(
-//                  mainAxisAlignment: MainAxisAlignment.start,
-//                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 SafeArea(
                   top: true,
@@ -151,25 +150,22 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
               ]
             ),
           ),
-//          Expanded(
-//            child: Container(
-//              padding: EdgeInsets.all(5),
-//              color: Colors.blue,
-//              child: PlacesAutocompleteResult(
-//                onTap: Navigator.of(context).pop,
-//                logo: widget.logo,
-//              ),
-//            ),
-//          )
+          Flexible(
+            child: Container(
+              padding: EdgeInsets.all(5),
+              color: Colors.blue,
+              child: PlacesAutocompleteResult(
+                onTap: Navigator.of(context).pop,
+                logo: widget.logo,
+              ),
+            ),
+          )
         ],
       ),
     );
     return Scaffold(
-        appBar: AppBar(title: body,),
-        body: PlacesAutocompleteResult(
-                onTap: Navigator.of(context).pop,
-                logo: widget.logo,
-              ),);
+
+        body: body);
   }
 }
 
@@ -436,7 +432,7 @@ class PredictionsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-
+      shrinkWrap: true,
       children: predictions
           .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
           .toList(),
