@@ -104,14 +104,19 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
 //                  mainAxisAlignment: MainAxisAlignment.start,
 //                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Container(
-                      color: Colors.red,
-                      child: Image.asset(
-                        widget.imageLogoPath == null ?
-                        'packages/flutter_google_places/assets/google_black.png'
-                        : widget.imageLogoPath,
-                        height: 52,
-                        width: 74,
+                    SafeArea(
+                      top: true,
+                      bottom: false,
+                      child: Container(
+                        padding: EdgeInsets.only(bottom: 10),
+                        color: Colors.red,
+                        child: Image.asset(
+                          widget.imageLogoPath == null ?
+                          'packages/flutter_google_places/assets/google_black.png'
+                          : widget.imageLogoPath,
+                          height: 52,
+                          width: 74,
+                        ),
                       ),
                     ),
                     Container(
