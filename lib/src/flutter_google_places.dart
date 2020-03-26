@@ -110,8 +110,12 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                       ),
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        AppBarPlacesAutoCompleteTextField(),
+                        Expanded(
+                          child: AppBarPlacesAutoCompleteTextField()
+                        ),
                         GestureDetector(
                           onTap: () {
                             Navigator.pop(context);
