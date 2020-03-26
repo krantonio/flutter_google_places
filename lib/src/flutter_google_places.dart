@@ -153,9 +153,12 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
               Expanded(
                 child: Align(
                   alignment: Alignment.topCenter,
-                  child: PlacesAutocompleteResult(
-                    onTap: Navigator.of(context).pop,
-                    logo: widget.logo,
+                  child: Container(
+                    padding: EdgeInsets.only(bottom: 500),
+                    child: PlacesAutocompleteResult(
+                      onTap: Navigator.of(context).pop,
+                      logo: widget.logo,
+                    ),
                   ),
                 ),
               )
