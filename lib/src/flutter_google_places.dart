@@ -96,7 +96,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
       children: <Widget>[
         Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(
@@ -150,9 +150,11 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                 ),
               ),
               Expanded(
-                child: PlacesAutocompleteResult(
-                  onTap: Navigator.of(context).pop,
-                  logo: widget.logo,
+                child: Container(
+                  child: PlacesAutocompleteResult(
+                    onTap: Navigator.of(context).pop,
+                    logo: widget.logo,
+                  ),
                 ),
               )
             ],
@@ -361,6 +363,7 @@ class _AppBarPlacesAutoCompleteTextFieldState
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
+              padding: EdgeInsets.all(5),
               child: state.widget.searchImagePath == null ?
               Icon(Icons.location_on) :
               Image.asset(state.widget.searchImagePath, width: 18, height: 23,),
