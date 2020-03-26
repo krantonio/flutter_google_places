@@ -95,6 +95,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
     final body = Stack(
       children: <Widget>[
         Container(
+          color: Colors.green,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -374,20 +375,20 @@ class _AppBarPlacesAutoCompleteTextFieldState
                 autofocus: true,
                 style: TextStyle(
                   color: Theme.of(context).brightness == Brightness.light
-                      ? Colors.black.withOpacity(0.9)
-                      : Colors.white.withOpacity(0.9),
+                      ? Color.fromRGBO(244, 88, 27, 0.9)
+                      : Color.fromRGBO(244, 88, 27, 0.9),
                   fontSize: 12.0,
                 ),
                 decoration: InputDecoration(
                   hintText: state.widget.hint,
                   filled: true,
                   fillColor: Theme.of(context).brightness == Brightness.light
-                      ? Colors.white30
-                      : Colors.black38,
+                      ? Color.fromRGBO(244, 88, 27, 0.9)
+                      : Color.fromRGBO(244, 88, 27, 0.9),
                   hintStyle: TextStyle(
                     color: Theme.of(context).brightness == Brightness.light
-                        ? Colors.black38
-                        : Colors.white30,
+                        ? Color.fromRGBO(244, 88, 27, 0.9)
+                        : Color.fromRGBO(244, 88, 27, 0.9),
                     fontSize: 12.0,
                   ),
                   border: InputBorder.none,
