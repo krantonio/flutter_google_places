@@ -27,6 +27,7 @@ class PlacesAutocompleteWidget extends StatefulWidget {
   final int debounce;
   final String imageLogoPath;
   final Color navBgColor;
+  final String searchImagePath;
 
   /// optional - sets 'proxy' value in google_maps_webservice
   ///
@@ -63,7 +64,8 @@ class PlacesAutocompleteWidget extends StatefulWidget {
       this.startText,
       this.debounce = 300,
       this.imageLogoPath,
-      this.navBgColor})
+      this.navBgColor,
+      this.searchImagePath})
       : super(key: key);
 
   @override
@@ -358,8 +360,7 @@ class _AppBarPlacesAutoCompleteTextFieldState
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Icon(Icons.location_on),
-            SizedBox(width: 8,),
+            state.widget.searchImagePath == null ? Icon(Icons.location_on) : Image.asset(state.widget.searchImagePath, width: 12, height: 18,),
             Expanded(
               child: TextField(
                 controller: state._queryTextController,
@@ -368,7 +369,7 @@ class _AppBarPlacesAutoCompleteTextFieldState
                   color: Theme.of(context).brightness == Brightness.light
                       ? Colors.black.withOpacity(0.9)
                       : Colors.white.withOpacity(0.9),
-                  fontSize: 16.0,
+                  fontSize: 12.0,
                 ),
                 decoration: InputDecoration(
                   hintText: state.widget.hint,
@@ -380,7 +381,7 @@ class _AppBarPlacesAutoCompleteTextFieldState
                     color: Theme.of(context).brightness == Brightness.light
                         ? Colors.black38
                         : Colors.white30,
-                    fontSize: 16.0,
+                    fontSize: 12.0,
                   ),
                   border: InputBorder.none,
                 ),
@@ -585,7 +586,8 @@ class PlacesAutocomplete {
       Client httpClient,
       String startText="",
       String imagePathLogo,
-      Color navBarColor}) {
+      Color navBarColor,
+      String searchImagePath}) {
     final builder = (BuildContext ctx) => PlacesAutocompleteWidget(
         apiKey: apiKey,
         mode: mode,
@@ -606,7 +608,8 @@ class PlacesAutocomplete {
         httpClient: httpClient,
         startText: startText,
         imageLogoPath: imagePathLogo,
-        navBgColor: navBarColor,);
+        navBgColor: navBarColor,
+        searchImagePath: searchImagePath,);
 
     if (mode == Mode.overlay) {
       return showDialog(context: context, builder: builder);
