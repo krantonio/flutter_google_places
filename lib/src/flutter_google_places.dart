@@ -360,28 +360,30 @@ class _AppBarPlacesAutoCompleteTextFieldState
           children: <Widget>[
             Icon(Icons.location_on),
             SizedBox(width: 8,),
-            TextField(
-              controller: state._queryTextController,
-              autofocus: true,
-              style: TextStyle(
-                color: Theme.of(context).brightness == Brightness.light
-                    ? Colors.black.withOpacity(0.9)
-                    : Colors.white.withOpacity(0.9),
-                fontSize: 16.0,
-              ),
-              decoration: InputDecoration(
-                hintText: state.widget.hint,
-                filled: true,
-                fillColor: Theme.of(context).brightness == Brightness.light
-                    ? Colors.white30
-                    : Colors.black38,
-                hintStyle: TextStyle(
+            Expanded(
+              child: TextField(
+                controller: state._queryTextController,
+                autofocus: true,
+                style: TextStyle(
                   color: Theme.of(context).brightness == Brightness.light
-                      ? Colors.black38
-                      : Colors.white30,
+                      ? Colors.black.withOpacity(0.9)
+                      : Colors.white.withOpacity(0.9),
                   fontSize: 16.0,
                 ),
-                border: InputBorder.none,
+                decoration: InputDecoration(
+                  hintText: state.widget.hint,
+                  filled: true,
+                  fillColor: Theme.of(context).brightness == Brightness.light
+                      ? Colors.white30
+                      : Colors.black38,
+                  hintStyle: TextStyle(
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.black38
+                        : Colors.white30,
+                    fontSize: 16.0,
+                  ),
+                  border: InputBorder.none,
+                ),
               ),
             )
           ],
