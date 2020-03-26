@@ -25,6 +25,8 @@ class PlacesAutocompleteWidget extends StatefulWidget {
   final Widget logo;
   final ValueChanged<PlacesAutocompleteResponse> onError;
   final int debounce;
+  final String imageLogoPath;
+  final Color navBgColor;
 
   /// optional - sets 'proxy' value in google_maps_webservice
   ///
@@ -59,7 +61,9 @@ class PlacesAutocompleteWidget extends StatefulWidget {
       this.proxyBaseUrl,
       this.httpClient,
       this.startText,
-      this.debounce = 300})
+      this.debounce = 300,
+      this.imageLogoPath,
+      this.navBgColor})
       : super(key: key);
 
   @override
@@ -95,17 +99,18 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
             children: <Widget>[
               Container(
                 padding: EdgeInsets.only(top: 20),
-                //color: Color.fromRGBO(244 88, 27, 2),
-                color: const Color.fromRGBO(244, 88, 27, 1),
+                color: widget.navBgColor == null ? Colors.white : widget.navBgColor,
                 child: Column(
                   children: <Widget>[
                     SafeArea(
                       top: true,
                       child: Container(
-                        padding: EdgeInsets.only(bottom: 20),
+                        padding: EdgeInsets.only(bottom: 15),
                         child: Image.asset(
-                          'packages/flutter_google_places/assets/bike-logo-white.png',
-                          height: 70,
+                          widget.imageLogoPath == null ?
+                          'packages/flutter_google_places/assets/google_black.png";'
+                          : widget.imageLogoPath,
+                          height: 52,
                         ),
                       ),
                     ),
@@ -126,7 +131,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                               'Cancel',
                               style: TextStyle(
                                   fontSize: 12,
-                                  color: Colors.white
+                                  color: widget.navBgColor == null? Colors.black : Colors.white
                               ),
                             ),
                           ),
@@ -136,7 +141,6 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                   ]
                 ),
               ),
-
               Expanded(
                 child: PlacesAutocompleteResult(
                   onTap: Navigator.of(context).pop,
@@ -424,7 +428,7 @@ class PredictionTile extends StatelessWidget {
         )
       ),
       child: ListTile(
-        //leading: SizedBox(width: 25,),
+        //leading: SizedBox(width: 25,),e
         title: Container(
           padding: EdgeInsets.only(left: 15),
           child: Text(prediction.description,
