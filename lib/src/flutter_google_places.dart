@@ -357,8 +357,13 @@ class PredictionTile extends StatelessWidget {
         )
       ),
       child: ListTile(
-        leading: SizedBox(width: 25,),
-        title: Text(prediction.description),
+        //leading: SizedBox(width: 25,),
+        title: Text(prediction.description,
+          style: TextStyle(
+            fontSize: 12,
+            color: Color.fromRGBO(244, 88, 27, 1)
+          ),
+        ),
         onTap: () {
           if (onTap != null) {
             onTap(prediction);
