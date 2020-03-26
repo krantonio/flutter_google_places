@@ -95,7 +95,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
     final body = Stack(
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(top: 10, bottom: 250),
+          padding: EdgeInsets.only(top: 10, bottom: 500),
           color: Colors.red,
           child: Column(
 
@@ -240,7 +240,7 @@ class _PlacesAutocompleteOverlayState extends PlacesAutocompleteState {
         _response.predictions.isEmpty) {
       body = Material(
         color: theme.dialogBackgroundColor,
-        //child: widget.logo ?? PoweredByGoogleImage(),
+        child: widget.logo ?? PoweredByGoogleImage(),
         borderRadius: BorderRadius.only(
           bottomLeft: bodyBottomLeftBorderRadius,
           bottomRight: bodyBottomRightBorderRadius,
@@ -339,7 +339,7 @@ class _PlacesAutocompleteResult extends State<PlacesAutocompleteResult> {
       if (state._searching) {
         children.add(_Loader());
       }
-      //children.add(widget.logo ?? PoweredByGoogleImage());
+      children.add(widget.logo ?? PoweredByGoogleImage());
       return Stack(children: children);
     }
     return PredictionsListView(
@@ -442,14 +442,11 @@ class PredictionsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      child: ListView(
-        shrinkWrap: true,
-        children: predictions
-            .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
-            .toList(),
-      ),
+    return ListView(
+      shrinkWrap: true,
+      children: predictions
+          .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
+          .toList(),
     );
   }
 }
