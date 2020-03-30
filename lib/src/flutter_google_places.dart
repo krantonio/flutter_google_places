@@ -363,6 +363,7 @@ class _AppBarPlacesAutoCompleteTextFieldState
             ),
             Expanded(
               child: TextField(
+                autocorrect: false,
                 controller: state._queryTextController,
                 autofocus: true,
                 style: TextStyle(
