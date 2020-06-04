@@ -28,6 +28,7 @@ class PlacesAutocompleteWidget extends StatefulWidget {
   final String imageLogoPath;
   final Color navBgColor;
   final String searchImagePath;
+  final onSetLocation;
 
   /// optional - sets 'proxy' value in google_maps_webservice
   ///
@@ -65,7 +66,8 @@ class PlacesAutocompleteWidget extends StatefulWidget {
       this.debounce = 300,
       this.imageLogoPath,
       this.navBgColor,
-      this.searchImagePath})
+      this.searchImagePath,
+      this.onSetLocation})
       : super(key: key);
 
   @override
@@ -145,6 +147,10 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
                 child: PlacesAutocompleteResult(
                   onTap: Navigator.of(context).pop,
                   logo: widget.logo,
+                  onSetLocation: () {
+                    widget.onSetLocation();
+                    Navigator.of(context).pop();
+                  },
                 ),
               )
             ],
@@ -297,8 +303,9 @@ class _Loader extends StatelessWidget {
 class PlacesAutocompleteResult extends StatefulWidget {
   final ValueChanged<Prediction> onTap;
   final Widget logo;
+  final Function onSetLocation;
 
-  PlacesAutocompleteResult({this.onTap, this.logo});
+  PlacesAutocompleteResult({this.onTap, this.logo, this.onSetLocation});
 
   @override
   _PlacesAutocompleteResult createState() => _PlacesAutocompleteResult();
@@ -320,9 +327,17 @@ class _PlacesAutocompleteResult extends State<PlacesAutocompleteResult> {
       children.add(widget.logo ?? PoweredByGoogleImage());
       return Stack(children: children);
     }
-    return PredictionsListView(
-      predictions: state._response.predictions,
-      onTap: widget.onTap,
+    return Column(
+      children: <Widget>[
+        GestureDetector(
+          onTap: widget.onSetLocation,
+          child: Text('test'),
+        ),
+        PredictionsListView(
+          predictions: state._response.predictions,
+          onTap: widget.onTap,
+        )
+      ],
     );
   }
 }
@@ -425,16 +440,13 @@ class PredictionsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      Text('test'),
-      ListView(
-        padding: EdgeInsets.all(0.0),
-        shrinkWrap: true,
-        children: predictions
-            .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
-            .toList(),
-      ),
-    ]);
+    return ListView(
+      padding: EdgeInsets.all(0.0),
+      shrinkWrap: true,
+      children: predictions
+          .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
+          .toList(),
+    );
   }
 }
 
@@ -592,7 +604,8 @@ class PlacesAutocomplete {
       String startText = "",
       String imagePathLogo,
       Color navBarColor,
-      String searchImagePath}) {
+      String searchImagePath,
+      Function onSetLocation}) {
     final builder = (BuildContext ctx) => PlacesAutocompleteWidget(
           apiKey: apiKey,
           mode: mode,
@@ -615,6 +628,7 @@ class PlacesAutocomplete {
           imageLogoPath: imagePathLogo,
           navBgColor: navBarColor,
           searchImagePath: searchImagePath,
+          onSetLocation: onSetLocation,
         );
 
     if (mode == Mode.overlay) {
